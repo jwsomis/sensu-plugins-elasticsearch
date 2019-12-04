@@ -58,6 +58,10 @@ module ElasticsearchCommon
 
     end
 
+    if config[:cert_file]
+      transport_options[:ssl] = { ca_file: config[:cert_file] }
+    end
+
     @client ||= Elasticsearch::Client.new(transport_class: transport_class, hosts: [host], region: config[:region], transport_options: transport_options)
   end
 end

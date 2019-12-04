@@ -161,6 +161,10 @@ class ESQueryCount < Sensu::Plugin::Check::CLI
          short: '-s SCHEME',
          long: '--scheme SCHEME'
 
+  option :cert_file,
+         description: 'Cert file to use',
+         long: '--cert-file CERT'
+
   option :password,
          description: 'Elasticsearch connection password',
          short: '-P PASSWORD',
